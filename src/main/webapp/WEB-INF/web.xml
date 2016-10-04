@@ -6,7 +6,7 @@
 	<display-name>OOS</display-name>
 
 	<context-param>
-		<param-name>WebAppRootKey</param-name>
+		<param-name>webAppRootKey</param-name>
 		<param-value>webApp.root</param-value>
 	</context-param>
 	<context-param>
@@ -26,14 +26,16 @@
 		<filter-name>encoding</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-
-	<!-- Spring 容器启动监听器 -->
-	<listener>
-		<listener-class>org.springframework.web.context.ContextLoaderListener </listener-class>
-	</listener>
+	
+	<!--log4j监听器  -->
 	<listener>
 		<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
 	</listener>
+	<!-- Spring 容器启动监听器 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
 	<!-- Spring MVC 的入口 -->
 	<servlet>
 		<servlet-name>springmvc</servlet-name>
